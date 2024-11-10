@@ -1,0 +1,130 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.background {
+    background: linear-gradient(to right, #464646, white 50%);
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.gradient-line {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(to right, #464646, red);
+    z-index: -1; /* Ensure it is behind the oval */
+}
+
+.outer-oval {
+    width: 10cm;
+    height: 7cm;
+    background: linear-gradient(to right, #464646 25%, red);
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    position: relative;
+    z-index: 1; /* Ensure it is in front of the gradient line */
+}
+
+.inner-oval {
+    width: 9cm; /* Make the inner oval slightly bigger */
+    height: 6cm;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+    .inner-oval img {
+        max-width: 160%; /* Make the logo bigger */
+    }
+
+.bordered {
+    border: 10px solid #464646;
+    padding: 10px;
+    margin: 10px auto;
+    display: inline-block;
+    background-color: lightgray;
+}
+
+.left-align {
+    text-align: left;
+}
+
+.bottom-section {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    margin-top: 20px;
+}
+
+.left-column, .right-column {
+    width: 45%;
+    margin: 0 2.5%;
+}
+
+.left-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.right-column {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+    .right-column img {
+        width: 80%; /* Adjust the width as needed to fit the desired size */
+    }
+
+        .right-column img:nth-child(1) {
+            position: absolute;
+            top: -45px;
+            left: 20px;
+            z-index: 0;
+        }
+
+        .right-column img:nth-child(2) {
+            position: absolute;
+            top: 20px;
+            left: 50px;
+            z-index: 1;
+        }
+
+/* Media query for screens smaller than 768px (e.g., phones) */
+@media (max-width: 768px) {
+    .bottom-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left-column, .right-column {
+        width: 90%;
+        margin: 10px 0;
+    }
+
+        .right-column img:nth-child(1) {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        .right-column img:nth-child(2) {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+}
